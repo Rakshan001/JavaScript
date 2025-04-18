@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage & JSON Example</title>
+</head>
+<body>
+
+    <h2>Check the Console for Output</h2>
+
+    <script>
+        // ---------------------------------------
+        // JavaScript Object
+        // ---------------------------------------
+
+        // An object is a data structure that holds data in key-value pairs.
+        // Keys can be unquoted, and values can be any data type (string, number, object, array, etc).
+        let product = {
+            name: "Laptop",
+            price: 1000,
+            brand: "Dell",
+            model: "XPS 13",
+            rating: {
+                stars: 4.5,
+                count: 1000
+            },
+            features: ["16GB RAM", "512GB SSD", "Intel i7"]
+        };
+
+        console.log("Original JavaScript Object:");
+        console.log(typeof product); // object
+        console.log(product);
+
+        // ---------------------------------------
+        // JSON (JavaScript Object Notation)
+        // ---------------------------------------
+
+        // JSON is a string representation of an object.
+        // All keys in JSON must be strings (quoted).
+        // JSON can be sent to or received from a server, and stored in localStorage.
+
+        // Convert object to JSON string
+        let jsonStr = JSON.stringify(product);
+        console.log("Converted to JSON String:");
+        console.log(typeof jsonStr); // string
+        console.log(jsonStr);
+
+        // Convert JSON string back to JavaScript object
+        let newProduct = JSON.parse(jsonStr);
+        console.log("Parsed Back to Object:");
+        console.log(typeof newProduct); // object
+        console.log(newProduct);
+        console.log("Accessing property from parsed object:", newProduct.name);
+
+        // ---------------------------------------
+        // Local Storage
+        // ---------------------------------------
+
+        // localStorage is a built-in browser API for storing key-value pairs as strings.
+        // It is persistent: data remains even after browser is closed.
+        // Only strings can be stored in localStorage, so objects must be stringified first.
+
+        // Save JSON string to localStorage
+        localStorage.setItem("product", jsonStr);
+
+        // Retrieve the data from localStorage
+        let storedProductStr = localStorage.getItem("product");
+        console.log("Retrieved from localStorage (as string):", storedProductStr);
+
+        // Convert the JSON string back to object
+        let storedProductObj = JSON.parse(storedProductStr);
+        console.log("Parsed stored data:", storedProductObj);
+        console.log("Accessing property from stored object:", storedProductObj.name);
+
+        // ---------------------------------------
+        // localStorage cleanup and reuse
+        // ---------------------------------------
+
+        // Remove a single item (uncomment to use)
+        // localStorage.removeItem("product");
+
+        // Clear all localStorage (uncomment to use)
+        localStorage.clear();
+
+        // Re-store for example
+        localStorage.setItem("key", jsonStr);
+        let storageValue = localStorage.getItem("key");
+        console.log("Stored again after clearing:", storageValue);
+
+        // Final Note:
+        // JSON is a data format (not a data structure) used to exchange data between client and server.
+        // JavaScript objects are actual data structures used in code.
+
+    </script>
+
+</body>
+</html>

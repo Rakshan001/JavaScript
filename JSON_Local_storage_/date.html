@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Date Example</title>
+</head>
+<body>
+
+    <h1>JavaScript Date Example</h1>
+    <p>Check the console for detailed date information.</p>
+
+    <script>
+        // ----------------------------
+        // Creating a Date object
+        // ----------------------------
+
+        // This creates a Date object with the current date and time
+        let myDate = new Date();
+
+        console.log("Full Date Object:", myDate); // Full Date & Time
+
+        // ----------------------------
+        // Getting Date Components
+        // ----------------------------
+
+        let day = myDate.getDate();           // Day of the month (1-31)
+        let month = myDate.getMonth() + 1;    // Month (0-11) => Add 1 to get (1-12)
+        let year = myDate.getFullYear();      // Full year (e.g., 2025)
+
+        console.log(`Day: ${day}, Month: ${month}, Year: ${year}`);
+
+        // ----------------------------
+        // Getting Time Components
+        // ----------------------------
+
+        let hours = myDate.getHours();        // Hours (0-23)
+        let minutes = myDate.getMinutes();    // Minutes (0-59)
+        let seconds = myDate.getSeconds();    // Seconds (0-59)
+
+        console.log(`Time: ${hours}:${minutes}:${seconds}`);
+
+        // ----------------------------
+        // Date in Different Formats
+        // ----------------------------
+
+        console.log("toString():", myDate.toString());           // Full date & time string
+        console.log("toDateString():", myDate.toDateString());   // Human-readable date (no time)
+        console.log("toTimeString():", myDate.toTimeString());   // Time only
+        console.log("toLocaleDateString():", myDate.toLocaleDateString()); // Localized date
+        console.log("toLocaleTimeString():", myDate.toLocaleTimeString()); // Localized time
+        console.log("ISO Format:", myDate.toISOString());        // ISO 8601 string (useful for databases)
+
+        // ----------------------------
+        // Creating Custom Date
+        // ----------------------------
+
+        let customDate = new Date("2024-12-25"); // YYYY-MM-DD
+        console.log("Custom Date (Christmas):", customDate.toDateString());
+
+        // ----------------------------
+        // Timestamp
+        // ----------------------------
+
+        let timestamp = myDate.getTime(); // Milliseconds since Jan 1, 1970
+        console.log("Timestamp (ms since 1970):", timestamp);
+
+        // ----------------------------
+        // Date Math Example
+        // ----------------------------
+
+        // Add 5 days to the current date
+        let futureDate = new Date(myDate);
+        futureDate.setDate(myDate.getDate() + 5);
+        console.log("Future Date (+5 days):", futureDate.toDateString());
+
+    </script>
+
+</body>
+</html>
+RR
