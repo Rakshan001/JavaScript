@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Properties and Methods</title>
+  </head>
+  <body>
+    <div id="myElement">Hello</div>
+
+    <div id="container">
+      <p id="para1">This is paragraph 1</p>
+      <p id="para3">This is paragraph middle</p>
+
+      <p id="para2">This is paragraph 2</p>
+    </div>
+
+    <script>
+      // =========================
+      // --- DOM PROPERTIES ---
+      // =========================
+
+      // 1. Access an element by ID
+      let element = document.getElementById("myElement");
+      console.log(element);
+      // Output: <div id="myElement">Hello</div>
+
+      // 2. Accessing properties of the element
+      console.log(element.innerHTML);
+      // Output: 'Hello' (inner HTML content)
+
+      console.log(element.innerText);
+      // Output: 'Hello' (text content without any tags)
+
+      console.log(element.classList);
+      // Output: list of classes applied on the element
+
+      console.log(element.style);
+      // Output: CSSStyleDeclaration (inline styles)
+
+      // 3. Modifying properties
+      element.innerHTML = "Hello, <b>World!</b>";
+      // Changes inner HTML, bolds 'World!'
+
+      element.innerText = "Plain Text Only";
+      // Changes to simple text (no HTML tags)
+
+      element.style.color = "blue";
+      // Changes the text color to blue
+
+      element.classList.add("newClass");
+      // Adds a new CSS class "newClass" to the element
+
+      // 4. Modifying document properties
+      console.log(document.location);
+      // Outputs full URL of the current page
+
+      console.log(document.domain);
+      // Outputs domain name (example: '127.0.0.1')
+
+      console.log(document.URL);
+      // Outputs complete URL as a string
+
+      console.log(document.title);
+      // Outputs the page title
+
+      document.title = "New Title Set by JS";
+      // Changes the page title dynamically
+
+      // =========================
+      // --- DOM METHODS ---
+      // =========================
+
+      // 5. getElementById
+      let paragraph1 = document.getElementById("para1");
+      console.log(paragraph1);
+      // Output: <p id="para1">This is paragraph 1</p>
+
+      // 6. querySelector
+      let firstParagraph = document.querySelector("p");
+      console.log(firstParagraph);
+      // Output: <p id="para1">This is paragraph 1</p> (first <p> found)
+
+      // 7. classList.add()
+      paragraph1.classList.add("highlight");
+      console.log(paragraph1.className);
+      // Output: 'highlight'
+
+      // 8. classList.remove()
+      paragraph1.classList.remove("highlight");
+      console.log(paragraph1.className);
+      // Output: '' (no classes)
+
+      // 9. createElement
+      let newParagraph = document.createElement("p");
+      newParagraph.innerText = "This is a new paragraph created dynamically.";
+      // Created but not added to DOM yet
+
+      // 10. appendChild
+      let container = document.getElementById("container");
+      container.appendChild(newParagraph);
+      // Adds the new paragraph at the end of #container
+
+      // 11. removeChild
+      let paragraph2 = document.getElementById("para2");
+      container.removeChild(paragraph2);
+      // Removes paragraph 2 from container
+
+      // 12. replaceChild
+      let replacementPara = document.createElement("p");
+      replacementPara.innerText = "This is a replacement paragraph.";
+      container.replaceChild(replacementPara, paragraph1);
+      // Replaces paragraph1 with a new paragraph
+    </script>
+
+    <script>
+      let para = document.querySelector("#para3");
+      let button = document.createElement("button");
+      button.innerHTML = "Click Here";
+      para.appendChild(button);
+    </script>
+  </body>
+</html>
