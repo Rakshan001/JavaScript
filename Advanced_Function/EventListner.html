@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EventListner</h1>
+    <button id="my-button">Click Here</button>
+
+    
+    <script>
+        let button=document.querySelector("#my-button");
+        let behavior=event=>{
+            // This is an anonymous function that will be executed when the button is clicked
+            console.log("Button clicked!");
+        };
+        button.addEventListener("click",behavior);
+
+        let printDate=event =>{
+            console.log(new Date().toLocaleString()); // This will print the current date and time in a readable format
+        }
+        button.addEventListener("click",printDate); // This will print the current date and time when the button is clicked
+
+        console.log("###########################################################");button.removeEventListener("click",behavior); // This will remove the event listener for the printDate function
+    </script>
+
+</body>
+</html>

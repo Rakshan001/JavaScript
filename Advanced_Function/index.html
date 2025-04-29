@@ -6,31 +6,63 @@
     <title>Advanced Functions</title>
 </head>
 <body>
-    <!-- <script>
-        let sum =function(num1, num2) {
-            return num1 + num2;
-        }
-        let newsum = sum;
-        console.log(sum(5, 10)); // Output: 15
-        console.log(newsum(5,10)); // Output: 15
-        console.log(typeof sum); // Output: 
+    <h1>Anonymous function</h1>
 
-    </script> -->
     <script>
+        // ✅ Anonymous Function: a function without a name
+        // This function is assigned to the variable `sum`
         let sum = function(num1, num2) {
-            return num1 + num2;
-        }
+            return num1 + num2; // adds two numbers and returns the result
+        };
+
+        // Assigning the same function to another variable `newsum`
         let newsum = sum;
-        console.log(sum(5, 10)); // Output: 15
 
+        console.log(sum(5, 10));      // Output: 15 — calling the function using original name
+        console.log(newsum(5, 10));   // Output: 15 — calling using the new variable
+
+        // ✅ Functions can be passed values including results of other functions
+        // This is another anonymous function assigned to `AddingThreeNumbers`
         let AddingThreeNumbers = function(num1, num2, sumoftwonumbers) {
-            let sum1=sum(num1, num2);
-            return sum1 + sumoftwonumbers;
-        }
+            let sum1 = sum(num1, num2); // reuse the `sum` function to add first two numbers
+            return sum1 + sumoftwonumbers; // then add the third value passed
+        };
 
-        console.log(AddingThreeNumbers(5, 10, 15)); // Output: 30
-        console.log(AddingThreeNumbers(5, 10, sum(5, 10))); // Output: 30
-       
+        console.log(AddingThreeNumbers(5, 10, 15)); // Output: 30 → (5+10) + 15
+        console.log(AddingThreeNumbers(5, 10, sum(5, 10))); // Output: 30 → (5+10) + (5+10)
     </script>
+
+    
+<h1>Named Function Example</h1>
+
+<script>
+    console.log("###########################################################");
+
+    console.log("Named Function Example");
+
+    // ✅ Named Function Declaration
+    // This function has a name: addNumbers
+    function addNumbers(a, b) {
+        return a + b; // returns the sum of a and b
+    }
+
+    // Calling the named function
+    console.log(addNumbers(10, 20)); // Output: 30
+
+    // ✅ Named Function can be reused multiple times
+    let result1 = addNumbers(5, 6);   // Output: 11
+    let result2 = addNumbers(100, 50); // Output: 150
+
+    console.log(result1);
+    console.log(result2);
+
+    // ✅ Functions can also be nested or used inside other functions
+    function calculateTotal(a, b, c) {
+        let sum1 = addNumbers(a, b); // using addNumbers inside another function
+        return sum1 + c;
+    }
+
+    console.log(calculateTotal(10, 20, 30)); // Output: 60 → (10+20) + 30
+</script>
 </body>
 </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ✅ Using Anonymous Function with setTimeout
+        // setTimeout executes a function after a delay (in milliseconds)
+        // Here, the function prints "Hello World!" after 4 seconds
+        setTimeout(function() {
+            console.log("Hello World!");
+        }, 2000); // 4000 ms = 4 seconds
+    </script>
+    <script>
+        let interval = function() {
+            console.log("Hello World ! using variable");
+        };
+        
+        // setInterval executes a function repeatedly at specified intervals (in milliseconds)
+        // Here, the function prints "Hello World!" every 2 seconds
+        let timerIDdf=setTimeout(interval, 2000); // 2000 ms = 2 seconds
+        console.log(` timer ID is : ${timerIDdf}`); // Output: 1 (the ID of the timer)
+        clearTimeout(timerIDdf); // This will stop the timer
+        console.log("Timer cleared"); // Output: Timer cleared
+    </script>
+
+    <script>
+        console.log("###########################################################");
+        console.log("Using Arrow function with setTimeout and setInterval");
+        // ✅ Using Arrow Function with setTimeout and setInterval
+        // Arrow functions are a shorter syntax for writing functions in JavaScript
+        // Here, the function prints "Hello World!" after 4 seconds
+        setTimeout(() => {
+            console.log("Hello World! using arrow function");
+        }, 4000); // 4000 ms = 4 seconds
+    </script>
+    <script>
+        console.log("Interval using arrow function");
+        // setInterval executes a function repeatedly at specified intervals (in milliseconds)
+        // Here, the function prints "Hello World!" every 2 seconds
+        // The arrow function syntax is used here   
+        let timerID = setInterval(() => {
+            console.log("Hello World Interval! using arrow function");
+        }, 2000); // 2000 ms = 2 seconds
+        console.log(` timer ID is for interval : ${timerID}`); // Output: 1 (the ID of the timer)
+        clearInterval(timerID); // This will stop the interval
+        console.log("Interval cleared"); // Output: Interval cleared
+        
+    </script>
+</body>
+</html>

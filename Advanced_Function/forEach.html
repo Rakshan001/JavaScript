@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+</head>
+<body>
+  <h1>ForEach</h1>
+
+  <script>
+    // ─────────────────────────────────────────────────────────────────
+    // The forEach() method executes a provided function once for each
+    // element in the array. It does not return a new array.
+    // ─────────────────────────────────────────────────────────────────
+
+    const numbers = [1, 2, 3, 4, 5];
+
+    // Using forEach with a normal callback function
+    numbers.forEach(function(number) {
+      console.log(number); 
+      // Prints each element of 'numbers' on its own line:
+      // 1, 2, 3, 4, 5
+    });
+
+    console.log("###########################################################");
+
+    // Using forEach with an arrow function
+    numbers.forEach((number) => {
+      console.log(number);
+    });
+    // Same output as above
+  </script>
+
+
+  <script>
+    console.log("###########################################################");
+    console.log("Find a number using a named function and for‐loop");
+
+    // ─────────────────────────────────────────────────────────────────
+    // Named Function Declaration:
+    // A function with a name can be hoisted and called before its
+    // definition, and can refer to itself for recursion.
+    //
+    // Here, findNumber() takes:
+    //  - arr:  an array of values
+    //  - target: the value to search for
+    //
+    // It prints the index where the target is found, or a not-found
+    // message if it isn’t in the array.
+    // ─────────────────────────────────────────────────────────────────
+
+    function findNumber(arr, target) {
+      // Iterate over each index of the array
+      for (let i = 0; i < arr.length; i++) {
+        // Compare the current element against the target
+        if (arr[i] === target) {
+          console.log(`Number ${target} found at index: ${i}`);
+          return;  // Exit the function as soon as we find the target
+        }
+      }
+
+      // If loop completes without finding the target, we get here
+      console.log(`Number ${target} not found in array.`);
+    }
+
+    // Call the function with our global 'numbers' array and a target value
+    findNumber(numbers, 4);  // Expected output: "Number 4 found at index: 3"
+    findNumber(numbers, 10); // Expected output: "Number 10 not found in array."
+  </script>
+</body>
+</html>
