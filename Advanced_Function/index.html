@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Functions</title>
+</head>
+<body>
+    <!-- <script>
+        let sum =function(num1, num2) {
+            return num1 + num2;
+        }
+        let newsum = sum;
+        console.log(sum(5, 10)); // Output: 15
+        console.log(newsum(5,10)); // Output: 15
+        console.log(typeof sum); // Output: 
+
+    </script> -->
+    <script>
+        let sum = function(num1, num2) {
+            return num1 + num2;
+        }
+        let newsum = sum;
+        console.log(sum(5, 10)); // Output: 15
+
+        let AddingThreeNumbers = function(num1, num2, sumoftwonumbers) {
+            let sum1=sum(num1, num2);
+            return sum1 + sumoftwonumbers;
+        }
+
+        console.log(AddingThreeNumbers(5, 10, 15)); // Output: 30
+        console.log(AddingThreeNumbers(5, 10, sum(5, 10))); // Output: 30
+       
+    </script>
+</body>
+</html>
