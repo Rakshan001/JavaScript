@@ -6,8 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="root"> </div>
-    <div id="root"></div>
+    <div id="hero"></div>
 </body>
 <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -18,4 +17,10 @@
     console.log(root);
     console.log(React);
 </script> -->
+
+<script>
+    var h2 = React.createElement("h2", null, "Hello World");
+    var root =  document.getElementById("hero");
+    ReactDOM.createRoot(root).render(h2);
+</script>
 </html>
