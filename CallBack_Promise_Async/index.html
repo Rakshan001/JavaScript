@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CallBack</h1>
+    <!-- <script>
+        function sum(a, b) {
+            console.log(a + b);
+        }
+        function calculator(a, b, callback) {
+        callback(a, b);
+        }
+        calculator(5, 10, sum); // Output: 15
+        calculator(5, 10, (a, b) => {
+            console.log(a - b); // Output: -5
+        });
+    </script> -->
+
+    <script>
+        function getData(dataId){
+            setTimeout(() => {
+                console.log("Data fetched for ID: " + dataId);
+            }, 2000); // Simulating a delay of 2 seconds 
+            console.log("Fetching data for ID: " + dataId);
+        }
+    </script>
+</body>
+</html>
